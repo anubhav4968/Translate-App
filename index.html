@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+    <style>
+        body{
+            /* background-color: brown; */
+            background-image:url("https://www.groovypost.com/wp-content/uploads/2021/08/translate-iphone-featured.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        #container{
+            display: flex;
+            /* border: 1px solid black; */
+        }
+        #input,#output{
+            flex: 1;
+            margin: 5%;
+            height: 300px;
+            border: 1px solid black;
+            background-color: rgb(175, 175, 248);
+        }
+        #input-text{
+            width: 99%;
+            height: 268px;
+            background-color: rgb(175, 175, 248);
+        }
+        #head{
+            background-color: white;
+            text-align: center;
+            text-decoration: underline;
+            /* color: white; */
+            font-size: 40px;
+        }
+        #input-language,#output-language{
+            /* margin-left: 20px;a */
+            font-size: 20px;
+        }
+        #input-language:hover,#output-language:hover{
+            background-color: blue ;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head">Translation Application</h1>
+    <div id="container">
+        <div id="input">
+            <select name="inp-lang" id="input-language">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="ja">Japnese</option>
+                <option value="fr">French</option>
+            </select>
+            <button id="record"><i class="fa-solid fa-microphone"></i></button>
+
+            <textarea name="input-text" id="input-text" oninput="debounce(main,1000)"></textarea>
+        </div>
+        <div id="output">
+            <select name="out-lang" id="output-language">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="fr">French</option>
+                <option value="ja">Japnese</option>
+            </select>
+
+            <p id="out_lang"></p>
+        </div>
+    </div>
+</body>
+</html>
+<script src="index.js"></script>
